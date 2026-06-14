@@ -1,0 +1,27 @@
+---
+- name: Deploy nginx
+  hosts: webservers
+  remote_user: iadiyanov
+  become: yes
+  become_method: sudo
+
+  tasks:
+  - name: Install nginx
+    ansible.builtin.apt:
+      name: nginx
+      state: latest
+      update_cache: yes
+
+  - name: Copy insdex
+    ansible.builtin.copy:
+      src: ./index.html
+      dest: /var/www/html/index.nginx-debian.html
+      owner: root
+      group: root
+      mode: '0666'
+
+  - name: Nginx enable and autostart
+    ansible.builtin.systemd_service:
+      name: nginx
+      state: started
+      enabled: yes
