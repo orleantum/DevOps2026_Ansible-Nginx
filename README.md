@@ -44,10 +44,12 @@ sudo apt install Ansible
 
 
 `inventory.yml`:
+
 <img width="649" height="124" alt="image" src="https://github.com/user-attachments/assets/2676555c-bd37-4fe3-b4e6-c3980bc77d6c" />
 
 
 `playbook.yml`:
+
 <img width="359" height="280" alt="image" src="https://github.com/user-attachments/assets/5eed3e01-df82-4cd6-8d86-b1bbb2e5b2f9" />
 
 
